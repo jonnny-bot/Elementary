@@ -1,0 +1,167 @@
+html, body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #fff, #f9f9f9); /* Subtle gradient */
+    margin: 0;
+}
+
+
+/* Header */
+#mainHeaderContainer {
+    height: 10%;
+    width: 100%;
+    border-bottom: 2px solid #ff4d00;
+    background-color: #f5f5f5;
+}
+
+
+#mainHeading {
+    padding: 20px;
+    color: #ff4d00;
+    font-size: 32px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+
+/* Sidebar */
+#sideBar {
+    width: 15%;
+    float: left;
+    height: 90%;
+    background-color: #fffae6;
+    padding: 20px;
+    border-right: 2px solid #ddd;
+}
+
+
+#addEntryButton {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 20px;
+    background-color: #ff4d00;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+
+#addEntryButton:hover {
+    background-color: #cc3b00;
+}
+
+
+/* Sidebar Links */
+.sideBarSubSections {
+    margin: 15px 0;
+}
+
+
+.sideBarSubSections p {
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+}
+
+
+.sideBarSubSections p:hover {
+    color: #ff4d00;
+}
+
+
+/* Calendar Section */
+#calendar {
+    float: right;
+    width: 85%;
+    padding: 20px;
+}
+
+
+#calendarHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+
+#calendarHeaderLeft h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+
+#calendarHeaderRight button {
+    background-color: #ff4d00;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+
+#calendarHeaderRight button:hover {
+    background-color: #cc3b00;
+}
+
+
+/* Calendar Body */
+#calendarBody {
+    margin-top: 20px;
+}
+
+
+#calendarTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+
+#calendarHead {
+    background-color: #f1f1f1;
+}
+
+
+.calendarDays {
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+}
+
+
+#weekDates td {
+    text-align: center;
+    padding: 15px;
+    font-size: 18px;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+
+#weekDates td:hover {
+    background-color: #ffebcc;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #sideBar {
+        width: 20%;
+    }
+
+
+    #calendar {
+        width: 80%;
+    }
+}
+
+
+

@@ -1,0 +1,234 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #f4f4f9, #ffc3a0);
+    text-align: center;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Centered heading styling */
+.heading-one {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Container to center everything */
+.container {
+    background: rgba(255, 255, 255, 0.8);
+    padding-right: 75px;
+    padding-left: 75px;
+    padding-top: 75px;
+    padding-bottom: 75px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 400px;
+
+
+}
+
+
+/* Navigation Buttons */
+.nav-button {
+    position: fixed; /* Keeps buttons in place */
+    font-size: 18px; /* Updated size */
+    font-weight: bold; /* Makes text bold */
+    background: none !important; /* Remove background */
+    border: none !important; /* Remove border */
+    cursor: pointer;
+    color: #007BFF !important; /* Fixed color */
+    transition: transform 0.2s ease-in-out;
+}
+
+
+/* Back button (top left) */
+/* Back button (top left) */
+.back-button {
+    position: fixed;  /* Fix it in place */
+    margin-right: 100px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: #007BFF;
+    z-index: 1000;    /* Ensures it's on top */
+}
+.back-button:hover{
+    transition: all 0.3s ease-in-out;
+    scale: (1.1, 1.1);
+}
+
+
+
+/* Next button (bottom right) */
+.next-button {
+    margin-left: 20vh;
+    margin-
+}
+
+
+/* Hover effect */
+.nav-button:hover {
+    transform: scale(1.1);
+}
+
+
+/* Mood display emoji styling */
+.mood-display {
+    font-size: 100px;
+    margin-top: 20px;
+    transition: transform 0.3s ease-in-out, font-size 0.3s ease;
+}
+
+
+/* Hover effect on the emoji */
+.mood-display:hover {
+    transform: scale(1.2);
+    font-size: 110px;
+}
+
+
+/* Styling the slider */
+/* Mood Slider */
+#moodSlider {
+    width: 60%;
+    height: 12px;
+    -webkit-appearance: none;
+    border-radius: 6px;
+    outline: none;
+    transition: background 0.3s ease-in-out;
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
+}
+
+/* Smooth animation */
+#moodSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 24px;
+    height: 24px;
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid #ff4b2b;
+    transition: transform 0.2s ease-in-out, background 0.3s ease-in-out;
+}
+
+#moodSlider::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+    background: #ff416c;
+}
+
+/* Firefox compatibility */
+#moodSlider::-moz-range-thumb {
+    width: 24px;
+    height: 24px;
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid #ff4b2b;
+    transition: transform 0.2s ease-in-out, background 0.3s ease-in-out;
+}
+
+#moodSlider::-moz-range-thumb:hover {
+    transform: scale(1.2);
+    background: #ff416c;
+}
+
+
+
+/* Description text styling */
+.mood-description {
+    font-size: 20px;
+    color: #666;
+    margin-top: 20px;
+    transition: color 0.3s ease;
+}
+
+
+.mood-description p {
+    margin: 5px 0;
+}
+
+
+.mood-description strong {
+    color: #ff4b2b;
+}
+
+
+/* Footer styling */
+#footer {
+    font-size: 14px;
+    margin-top: 50px;
+    color: #555;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #f4f4f9, #ffc3a0);
+    text-align: center;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Progress Bar */
+.progress-container {
+    width: 100%;
+    height: 5px;
+    background: #ddd;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.progress-bar {
+    height: 5px;
+    background: #ff4b2b;
+    transition: width 0.5s ease-in-out;
+}
+
+/* Back Button */
+.back-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: #007BFF;
+}
+
+/* Fade-in & Fade-out Animations */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+.fade-out {
+    opacity: 1;
+    animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}

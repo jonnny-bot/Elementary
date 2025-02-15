@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Tracker</title>
+    <link rel="stylesheet" href="mood.css">
+</head>
+<body class="fade-in">
+
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar" style="width: 40%;"></div>
+    </div>
+
+    <div class="container">
+        <button class="nav-button back-button" onclick="goBack()">&#8592; Back</button>
+        <h2>How are you feeling?</h2>
+       
+        <!-- Mood Slider -->
+        <input type="range" id="moodSlider" min="1" max="5" value="3">
+       
+        <!-- Mood Display (Emoji) -->
+        <div id="moodDisplay" class="mood-display">😐</div>
+       
+        <!-- Mood Description -->
+        <p class="mood-description">
+            <strong>Current Mood:</strong>
+        </p>
+        
+        <!-- Next Button -->
+        <button class="nav-button next-button" onclick="goNext()">Next &#8594;</button>
+    </div>
+
+    <script src="mood.js"/>
+
+</body>
+</html>

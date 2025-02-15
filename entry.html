@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal Entry</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="fade-in">
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar" style="width: 100%;"></div>
+    </div>
+
+    <div class="container">
+        <!-- Back Button -->
+        <button class="back-button" onclick="goBack()">&#8592; Back</button>
+        
+        <!-- Title -->
+        <h1 class="title">Journal Entry</h1>
+        
+        <!-- Title Input -->
+        <input type="text" class="input-field" placeholder="Title ...">
+        
+        <!-- Notes Textarea -->
+        <textarea id="journal-entry" class="textarea" placeholder="Add some notes..."></textarea>
+        
+        <!-- Save Button -->
+        <button class="save-button" onclick="goNext()">Complete Check In</button>
+    </div>
+
+    <script>
+        function goBack() {
+            document.body.classList.add('fade-out');
+            setTimeout(() => {
+                window.location.href = "mood.html"; // Change this to the correct URL
+            }, 500);
+        }
+        function goNext(){
+            document.body.classList.add('fade-out');
+            setTimeout(() => {
+                window.location.href = "mainPage.html";
+            }, 500);
+        }
+
+    </script>
+</body>
+</html>
