@@ -1,0 +1,66 @@
+html, body{
+    height: 100%;
+}
+#mainHeaderContainer{
+    height: 10%;
+    width: 100%;
+    border-bottom: 1px solid;
+}
+#mainHeading{
+    padding: 1%;
+    margin-left: 1%;
+}
+#sideBar{
+    width: 15%;
+    float: left;
+    border-right: 1px solid;
+    height: 90%;
+}
+#calendar{
+    float: right;
+    width: 85%;
+    height: 5%;
+}
+#calendarHeader{
+    /* border: solid; */
+    width: 30%;
+    height: 100%;
+}
+#calendarHeaderLeft{
+    float: left;
+    width: 70%;
+}
+#calendarHeaderRight{
+    float: right;
+    width: 30%;
+}
+#calendarBody{
+    /* border: solid; */
+    width: 100%;
+    margin-top: 2%;
+    height: 100%;
+}
+.calendarDays{
+    width: 10%
+}
+#calendarTable, #calendarHead, #calendarHeads {
+    width: 100%;
+}
+#addEntryButton{
+    width: 70%;
+    height: 7%;
+    margin-top: 10%;
+    margin-left: 15%;
+}
+#sideBarSections{
+    width: 100%;
+    height: 35%;
+    margin-top: 15%;
+}
+.sideBarSubSections{
+    width: 100%;
+    height: 25%;
+}
+.sideBarSubSectionsParagraph{
+    margin-left: 10%;
+}
