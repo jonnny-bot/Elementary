@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mood Tracker</title>
+  <link rel="stylesheet" href="slider.css" />
+</head>
+<body>
+
+  <!-- Floating Bubbles (optional background animation) -->
+  <div class="bubbles">
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
+
+  <!-- Back Button (Top Left) -->
+  <button class="nav-button back-button" onclick="goBack()">← Back</button>
+
+  <!-- Page Heading -->
+  <h1 class="heading-one">Echo for a Healthier Mind</h1>
+
+  <!-- Status Bar (Synced with Slider) -->
+  <div class="status-bar">
+    <div id="statusFill" class="status-fill"></div>
+  </div>
+
+  <!-- Main Card to hold the mood slider, emoji, etc. -->
+  <div class="card">
+    <!-- Mood Tracker Container -->
+    <div class="container">
+      <!-- Mood Slider -->
+      <input type="range" id="moodSlider" min="1" max="5" value="3">
+
+      <!-- Emoji Display -->
+      <div id="moodDisplay" class="mood-display">😐</div>
+
+      <!-- Mood Description -->
+      <p class="mood-description" id="moodText">Feeling neutral.</p>
+
+      <!-- Explanation Text -->
+      <p class="mood-explanation">
+        Track your mood to improve mental well-being. Adjust the slider to reflect your feelings.
+      </p>
+    </div>
+  </div>
+
+  <!-- Next Button (Outside, bottom-right) -->
+  <button class="nav-button next-button" onclick="goNext()">Next →</button>
+
+  <script src="slider.js"></script>
+</body>
+</html>

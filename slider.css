@@ -1,0 +1,182 @@
+/* -------------------------
+   Base & Layout
+------------------------- */
+body {
+    margin: 0;
+    padding: 0;
+    /* Simple vertical gradient background */
+    background: linear-gradient(to bottom, #fff, #ffc9a8);
+    font-family: Arial, sans-serif;
+    text-align: center;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+  }
+  
+  /* Vibrant Heading at the top */
+  .heading-one {
+    margin-top: 40px; /* Adjusted top margin */
+    margin-bottom: 10px;
+    font-size: 36px;
+    font-weight: bold;
+    color: #ff416c; /* Vibrant Color */
+  }
+  
+  /* Main Card (container for slider, emoji, etc.) */
+  .card {
+    background: #fff;
+    width: 85%; /* Adjusted to be a little smaller */
+    max-width: 550px;
+    margin: 40px auto; /* Adjusted center margin */
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    padding: 30px 20px;
+    position: relative;
+    z-index: 2; /* Above background bubbles */
+  }
+  
+  /* -------------------------
+     Floating Bubbles
+  ------------------------- */
+  .bubbles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -3;
+  }
+  
+  .bubbles span {
+    position: absolute;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: rgba(255,255,255,0.3);
+    border-radius: 50%;
+    bottom: -150px;
+    animation: bubble 20s infinite;
+  }
+  
+  .bubbles span:nth-child(1) { left: 10%; animation-duration: 15s; animation-delay: 2s; }
+  .bubbles span:nth-child(2) { left: 20%; animation-duration: 20s; animation-delay: 4s; }
+  .bubbles span:nth-child(3) { left: 25%; animation-duration: 18s; animation-delay: 3s; }
+  .bubbles span:nth-child(4) { left: 40%; animation-duration: 22s; animation-delay: 6s; }
+  .bubbles span:nth-child(5) { left: 55%; animation-duration: 17s; animation-delay: 1s; }
+  .bubbles span:nth-child(6) { left: 65%; animation-duration: 19s; animation-delay: 5s; }
+  .bubbles span:nth-child(7) { left: 70%; animation-duration: 16s; animation-delay: 3s; }
+  .bubbles span:nth-child(8) { left: 80%; animation-duration: 21s; animation-delay: 2s; }
+  .bubbles span:nth-child(9) { left: 90%; animation-duration: 23s; animation-delay: 4s; }
+  .bubbles span:nth-child(10) { left: 50%; animation-duration: 25s; animation-delay: 7s; }
+  
+  @keyframes bubble {
+    0% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-200px) scale(1.2); }
+    100% { transform: translateY(-400px) scale(0.8); opacity: 0; }
+  }
+  
+  /* -------------------------
+     Status Bar
+  ------------------------- */
+  .status-bar {
+    width: 80%;
+    height: 12px;
+    background: #e0e0e0;
+    border-radius: 6px;
+    margin: 20px auto 0;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+  }
+  
+  .status-fill {
+    height: 100%;
+    width: 60%;
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
+    transition: width 0.3s ease, background 0.3s ease;
+  }
+  
+  /* -------------------------
+     Slider
+  ------------------------- */
+  #moodSlider {
+    width: 60%;
+    height: 12px;
+    -webkit-appearance: none;
+    background: #ddd;
+    border-radius: 6px;
+    outline: none;
+    transition: opacity 0.3s;
+  }
+  
+  #moodSlider:hover {
+    opacity: 1;
+  }
+  
+  #moodSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 24px;
+    height: 24px;
+    background: #ff416c;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s;
+    border: 2px solid #fff;
+  }
+  
+  #moodSlider::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+    background: #ff4b2b;
+  }
+  
+  /* -------------------------
+     Mood Display & Description
+  ------------------------- */
+  .mood-display {
+    font-size: 60px;
+    transition: transform 0.3s;
+  }
+  
+  .mood-display:hover {
+    transform: scale(1.2);
+  }
+  
+  .mood-description {
+    font-size: 20px;
+    margin: 5px 0;
+    font-weight: bold;
+    color: #ff4b2b; /* Vibrant Color */
+  }
+  
+  .mood-explanation {
+    font-size: 16px;
+    color: #333;
+    margin: 5px 0 10px;
+    max-width: 80%;
+    text-align: center; /* Center aligned text */
+  }
+  
+  /* -------------------------
+     Navigation Buttons
+  ------------------------- */
+  .nav-button {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    background: #007bff;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+  
+  .nav-button:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+  }
+  
+  /* B
+  
