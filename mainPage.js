@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function () {
   const weekRange = document.getElementById('week-range');
   const weekDates = document.getElementById('weekDates');
@@ -5,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const nextWeekButton = document.getElementById('next-week');
 
   let currentDate = new Date();
+  let selectedDate = null; // Track the selected date
 
   function renderWeek() {
       weekDates.innerHTML = '';
@@ -25,7 +27,33 @@ document.addEventListener('DOMContentLoaded', function () {
 
           const cell = document.createElement('td');
           cell.textContent = day.getDate();
+          cell.classList.add('date'); // Add a 'date' class for easy selection
+
+          // If this is the currently selected date, highlight it
+          if (selectedDate && day.toDateString() === selectedDate.toDateString()) {
+              cell.classList.add('highlighted');
+          }
+
           weekDates.appendChild(cell);
+
+          // Add event listener to each date cell
+          cell.addEventListener('click', function () {
+              if (selectedDate && selectedDate.toDateString() === day.toDateString()) {
+                  // Deselect date
+                  cell.classList.remove('highlighted');
+                  selectedDate = null;
+                  showAllEntries(); // Show all entries when no date is selected
+              } else {
+                  // Select new date
+                  if (selectedDate) {
+                      // Remove highlight from the previously selected date
+                      document.querySelector('.highlighted')?.classList.remove('highlighted');
+                  }
+                  cell.classList.add('highlighted');
+                  selectedDate = day;
+                  filterEntriesByDate(day); // Filter entries based on selected date
+              }
+          });
       }
   }
 
@@ -43,40 +71,36 @@ document.addEventListener('DOMContentLoaded', function () {
   loadEntries();
 });
 
-function submit() {
-  document.body.classList.add('fade-out');
-  setTimeout(() => {
-      window.location.href = "mood.html";
-  }, 500);
+function showAllEntries() {
+  // Implement logic to show all entries when no date is selected
+  loadEntries(); // Re-load entries as is (show all)
 }
-document.addEventListener('DOMContentLoaded', function () {
-  loadEntries(); 
-});
 
-
-
-function loadEntries() {
+function filterEntriesByDate(selectedDate) {
   const moodEntries = JSON.parse(localStorage.getItem("moodEntries")) || [];
   const journalEntries = JSON.parse(localStorage.getItem("journalEntries")) || [];
 
-  const entryContainer = document.createElement("div");
-  entryContainer.id = "entryContainer";
+  const filteredMoodEntries = moodEntries.filter(entry => {
+      const entryDate = new Date(entry.date);
+      return entryDate.toDateString() === selectedDate.toDateString();
+  });
 
+  const filteredJournalEntries = journalEntries.filter((_, index) => {
+      const entryDate = new Date(moodEntries[index].date);
+      return entryDate.toDateString() === selectedDate.toDateString();
+  });
 
-  const oldContainer = document.getElementById("entryContainer");
-  if (oldContainer) oldContainer.remove();
+  // Clear the current entries and show the filtered ones
+  const entryContainer = document.getElementById("entryContainer");
+  entryContainer.innerHTML = '';
 
-  document.getElementById("calendarBody").appendChild(entryContainer);
-
-
-  if (moodEntries.length === 0 && journalEntries.length === 0) {
-      entryContainer.innerHTML = "<p>No mood or journal entries yet.</p>";
+  if (filteredMoodEntries.length === 0 && filteredJournalEntries.length === 0) {
+      entryContainer.innerHTML = "<p>No entries for the selected date.</p>";
       return;
   }
 
-
-  moodEntries.forEach((entry, index) => {
-      const journalEntry = journalEntries[index] || { title: "No journal entry", details: "No details available" };
+  filteredMoodEntries.forEach((entry, index) => {
+      const journalEntry = filteredJournalEntries[index] || { title: "No journal entry", details: "No details available" };
 
       const entryDiv = document.createElement("div");
       entryDiv.classList.add("entry");
@@ -93,36 +117,19 @@ function loadEntries() {
 
       entryContainer.appendChild(entryDiv);
 
-
       entryDiv.querySelector('.viewMoreBtn').addEventListener('click', function () {
           const details = entryDiv.querySelector('.journalDetails');
           details.classList.toggle('hidden'); 
       });
-
 
       entryDiv.querySelector('.deleteEntryBtn').addEventListener('click', function () {
           deleteEntry(index);
       });
   });
 }
-
-document.getElementById("analyticsButton").addEventListener("click", function() {
-  window.location.href = "analyticsPage.html"; 
-});
-
-
-
-
-
-function deleteEntry(index) {
-  let moodEntries = JSON.parse(localStorage.getItem("moodEntries")) || [];
-  let journalEntries = JSON.parse(localStorage.getItem("journalEntries")) || [];
-
-  moodEntries.splice(index, 1);
-  journalEntries.splice(index, 1);
-
-  localStorage.setItem("moodEntries", JSON.stringify(moodEntries));
-  localStorage.setItem("journalEntries", JSON.stringify(journalEntries));
-
-  loadEntries(); 
-}
+function submit() {
+  document.body.classList.add('fade-out');
+  setTimeout(() => {
+      window.location.href = "mood.html";
+  }, 500);
+};
