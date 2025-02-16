@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Favorites</title>
+  <link rel="stylesheet" href="Favorites.css">
+</head>
+
+<body>
+  <div id="mainHeaderContainer">
+      <h1 id="mainHeading">Favorites</h1>
+      <button id="goBackButton">Go Back</button>
+  </div>
+  <div id="favoriteEntriesContainer"></div>
+
+  <script>
+      document.addEventListener('DOMContentLoaded', function () {
+          const favoriteEntries = JSON.parse(localStorage.getItem("favoriteEntries")) || [];
+          const favoriteEntriesContainer = document.getElementById("favoriteEntriesContainer");
+          const goBackButton = document.getElementById("goBackButton");
+
+          goBackButton.addEventListener("click", function () {
+              window.history.back();
+          });
+
+          if (favoriteEntries.length === 0) {
+              favoriteEntriesContainer.innerHTML = "<p>No favorite entries found.</p>";
+              return;
+          }
+
+          favoriteEntries.forEach((entry, index) => {
+              const entryDiv = document.createElement("div");
+              entryDiv.classList.add("entry");
+
+              entryDiv.innerHTML = `
+                  <p><strong>Mood:</strong> ${entry.moodEntry.mood}</p>
+                  <p><strong>Journal:</strong> ${entry.journalEntry.title}</p>
+                  <p><strong>Date:</strong> ${entry.moodEntry.date}</p>
+                  <div class="journalDetails">${entry.journalEntry.details}</div>
+                  <button class="removeButton" data-index="${index}">Remove from Favorites</button>
+                  <hr>
+              `;
+
+              favoriteEntriesContainer.appendChild(entryDiv);
+          });
+
+          document.querySelectorAll(".removeButton").forEach(button => {
+              button.addEventListener("click", function () {
+                  const index = this.getAttribute("data-index");
+                  favoriteEntries.splice(index, 1);
+                  localStorage.setItem("favoriteEntries", JSON.stringify(favoriteEntries));
+                  location.reload();
+              });
+          });
+      });
+  </script>
+</body>
+</html>

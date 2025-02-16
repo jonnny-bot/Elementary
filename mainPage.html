@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mooster Home</title>
+  <link rel="stylesheet" href="mainPage.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="mainHeaderContainer">
+        <h1 id="mainHeading">Moodster</h1>
+    </div>
+    <div id="sideBar">
+     
+        <button id="addEntryButton" onclick="submit()">+ New Entry</button>
+
+        <div id="sideBarSections">
+            <div class="sideBarSubSections">
+                <a href="Favorites.html" class="sideBarLink">Favorites</a>
+            </div>
+            <div class="sideBarSubSections">
+                <a href="Focus.html" class="sideBarLink">Focus Timer</a>
+            </div>
+            <div class="sideBarSubSections">
+                <a href="analytics.html" class="sideBarLink">Analytics</a>
+            </div>
+        </div>
+    </div>
+    
+    <div id="calendar">
+        <div id="calendarHeader">
+            <div id="calendarHeaderLeft">
+                <h2 id="week-range"></h2>
+            </div>
+            <div id="calendarHeaderRight">
+                <button id="prev-week">&lt;</button>
+                <button id="next-week">&gt;</button>
+            </div>
+        </div>  
+        <div id="calendarBody">
+            <table id="calendarTable">
+                <thead id="calenderHead">
+                    <tr id="calendarDates">
+                        <th class="calendarDays">Sun</th>
+                        <th class="calendarDays">Mon</th>
+                        <th class="calendarDays">Tue</th>
+                        <th class="calendarDays">Wed</th>
+                        <th class="calendarDays">Thu</th>
+                        <th class="calendarDays">Fri</th>
+                        <th class="calendarDays">Sat</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="weekDates"></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="entryContainer"></div>
+
+    <script src="mainPage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.1.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.1.3/firebase-auth.js"></script>
+</body>
+</html>
