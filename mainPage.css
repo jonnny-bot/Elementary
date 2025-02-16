@@ -1,12 +1,11 @@
 html, body {
     height: 100%;
     font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #fff, #f9f9f9); /* Subtle gradient */
+    background: linear-gradient(to bottom, #fff, #f9f9f9); 
     margin: 0;
 }
 
 
-/* Header */
 #mainHeaderContainer {
     height: 10%;
     width: 100%;
@@ -24,7 +23,6 @@ html, body {
 }
 
 
-/* Sidebar */
 #sideBar {
     width: 15%;
     float: left;
@@ -53,7 +51,6 @@ html, body {
 }
 
 
-/* Sidebar Links */
 .sideBarSubSections {
     margin: 15px 0;
 }
@@ -71,7 +68,6 @@ html, body {
 }
 
 
-/* Calendar Section */
 #calendar {
     float: right;
     width: 85%;
@@ -110,7 +106,6 @@ html, body {
 }
 
 
-/* Calendar Body */
 #calendarBody {
     margin-top: 20px;
 }
@@ -150,8 +145,6 @@ html, body {
     background-color: #ffebcc;
 }
 
-
-/* Responsive Design */
 @media (max-width: 768px) {
     #sideBar {
         width: 20%;
