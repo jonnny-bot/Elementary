@@ -1,7 +1,7 @@
-/* General Page Styling */
+
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(to bottom, #fff, #ffead6); /* Original theme */
+    background: linear-gradient(to bottom, #fff, #ffead6);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,7 +9,6 @@ body {
     margin: 0;
 }
 
-/* Centered Login Box */
 .container {
     display: flex;
     justify-content: center;
@@ -22,18 +21,17 @@ body {
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
-    text-align: center; /* Center Mooster title */
+    text-align: center; 
     max-width: 400px;
     width: 90%;
     display: flex;
     flex-direction: column;
 }
 
-/* Titles */
 .title {
     font-size: 28px;
     font-weight: bold;
-    color: #ff4d00; /* Matching previous theme */
+    color: #ff4d00;
     margin-bottom: 10px;
 }
 
@@ -42,37 +40,32 @@ body {
     color: #333;
     margin-bottom: 20px;
 }
-
-/* Aligning the input labels to the left */
 label {
     font-size: 14px;
     color: #333;
     margin-left: 10px;
     text-align: left;
-    display: block; /* Makes sure labels are block-level to align left */
+    display: block;
 }
 
-/* Input Fields */
 input {
     width: 100%;
     padding: 12px;
     margin: 10px 0;
-    border: 1px solid #ff4d00; /* Vibrant border color */
+    border: 1px solid #ff4d00;
     border-radius: 8px;
     font-size: 16px;
-    background: #fff3e0; /* Light vibrant background */
+    background: #fff3e0;
     color: #333;
 }
 
-/* Input Fields Focused */
 input:focus {
     border: 2px solid #ff4d00;
-    background: #ffe6cc; /* Light focus color */
+    background: #ffe6cc; 
 }
 
-/* Button */
 .btn {
-    background: #ff4d00; /* Button color matching theme */
+    background: #ff4d00;
     color: white;
     border: none;
     padding: 12px;
@@ -88,7 +81,6 @@ input:focus {
     background: #cc3b00;
 }
 
-/* Quote Section */
 .quote {
     font-style: italic;
     color: #555;
@@ -100,12 +92,11 @@ input:focus {
     color: #777;
 }
 
-/* Sign-up Link (Centered) */
 .signup-link {
     margin-top: 15px;
     font-size: 14px;
     color: #555;
-    text-align: center; /* Center the link */
+    text-align: center;
 }
 
 .signup-link a {
