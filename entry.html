@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal Entry</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="fade-in">
+
+    <div class="progress-container">
+        <div class="progress-bar" style="width: 100%;"></div>
+    </div>
+
+    <div class="container">
+
+        <button class="back-button" onclick="goBack()">&#8592; Back</button>
+        
+        <h1 class="title">Journal Entry</h1>
+        
+
+        <input type="text" class="input-field" placeholder="Title ...">
+        
+
+        <textarea id="journal-entry" class="textarea" placeholder="Add some notes..."></textarea>
+        
+
+        <button class="save-button">Complete Check-In</button>
+    </div>
+
+    <script>
+     function saveEntry() {
+    const title = document.querySelector(".input-field").value || "Untitled";
+    const details = document.querySelector("#journal-entry").value || "No details provided"; 
+    const date = new Date().toLocaleString();
+
+    let journalData = JSON.parse(localStorage.getItem("journalEntries")) || [];
+    journalData.push({ title, details, date }); 
+
+    localStorage.setItem("journalEntries", JSON.stringify(journalData));
+
+    window.location.href = "mainPage.html"; 
+}
+
+
+
+        document.querySelector(".save-button").addEventListener("click", saveEntry);
+
+        
+    </script>
+</body>
+</html>
