@@ -5,12 +5,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const dailyFocus = document.querySelector('.daily-focus');
     const totalSessions = document.querySelector('.total-sessions');
 
-    let timeLeft = 25 * 60; // 25 minutes in seconds
+    let timeLeft = 25 * 60;
     let timerId = null;
     let isRunning = false;
     let sessionStartTime = null;
 
-    // Load and display session stats
     updateSessionStats();
 
     startButton.addEventListener('click', function() {
@@ -30,7 +29,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }, 1000);
         } else {
-            // Pausing timer
             clearInterval(timerId);
             isRunning = false;
             startButton.textContent = 'Start';
@@ -57,16 +55,14 @@ document.addEventListener('DOMContentLoaded', function() {
         clearInterval(timerId);
         isRunning = false;
         
-        // Save session data
         const sessions = JSON.parse(localStorage.getItem('focusSessions')) || [];
         sessions.push({
             date: new Date().toISOString(),
-            duration: 25 * 60, // 25 minutes in seconds
+            duration: 25 * 60, 
             completed: true
         });
         localStorage.setItem('focusSessions', JSON.stringify(sessions));
         
-        // Reset timer
         timeLeft = 25 * 60;
         startButton.textContent = 'Start';
         startButton.classList.remove('pause');
@@ -77,7 +73,6 @@ document.addEventListener('DOMContentLoaded', function() {
     function updateSessionStats() {
         const sessions = JSON.parse(localStorage.getItem('focusSessions')) || [];
         
-        // Calculate today's focus time
         const today = new Date().toDateString();
         const todaysSessions = sessions.filter(session => 
             new Date(session.date).toDateString() === today
